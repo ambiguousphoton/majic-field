@@ -1,0 +1,389 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://KinematicBody2D.gd" type="Script" id=2]
+[ext_resource path="res://ui/HUD.tscn" type="PackedScene" id=3]
+[ext_resource path="res://CONTROL.tscn" type="PackedScene" id=4]
+[ext_resource path="res://admob-lib/admob.gd" type="Script" id=5]
+[ext_resource path="res://AUDIO/gun shot.wav" type="AudioStream" id=6]
+[ext_resource path="res://extra/SCREEN SHAKE.tscn" type="PackedScene" id=7]
+[ext_resource path="res://art/sargent gun.png" type="Texture" id=8]
+[ext_resource path="res://art/sargrnt.png" type="Texture" id=9]
+[ext_resource path="res://art/sargent leg.png" type="Texture" id=10]
+[ext_resource path="res://pickups/HEALTH/gun shot0003.png" type="Texture" id=11]
+[ext_resource path="res://pickups/HEALTH/gun shot0004.png" type="Texture" id=12]
+[ext_resource path="res://pickups/HEALTH/gun shot0002.png" type="Texture" id=13]
+[ext_resource path="res://art/super pan.png" type="Texture" id=14]
+[ext_resource path="res://art/crosshairlong.png" type="Texture" id=15]
+[ext_resource path="res://BULLET.tscn" type="PackedScene" id=16]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 40.8056
+
+[sub_resource type="Animation" id=2]
+resource_name = "New Anim"
+length = 0.45
+tracks/0/type = "value"
+tracks/0/path = NodePath("turret:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -0.926849, 28.0218 ), Vector2( -25, -2 ), Vector2( -0.926849, 28.0218 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("turret:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -39.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.95, 0.95 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.337255, 1, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("sargrnt:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0.75, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("sargrnt:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.34, 0.34 ), Vector2( 0.29, 0.29 ), Vector2( 0.34, 0.34 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0.439216, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.25, 1 ), Vector2( 1, 1.35 ), Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("sargrnt:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0.439216, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("sargrnt:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.34, 0.34 ), Vector2( 0.49, 0.34 ), Vector2( 0.34, 0.59 ), Vector2( 0.34, 0.34 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "leg move"
+length = 0.9
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("sargrnt/Sprite2:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.4, 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -70, 3 ), Vector2( -90, -5 ), Vector2( -25, -25 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("sargrnt/Sprite3:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.7, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 25, -25 ), Vector2( 90, 5 ), Vector2( 70, 3 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "movement"
+length = 0.45
+tracks/0/type = "value"
+tracks/0/path = NodePath("sargrnt:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -24 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=8]
+resource_name = "gun"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("turret:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -20, 0 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("turret:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 8 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 8 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "movement"
+length = 0.45
+tracks/0/type = "value"
+tracks/0/path = NodePath("sargrnt:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -24 ), Vector2( 0, 0 ) ]
+}
+
+[node name="player" type="KinematicBody2D"]
+position = Vector2( 1, 1.41422 )
+collision_layer = 3
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+SPEED = 240
+BULLET = ExtResource( 16 )
+guncooldown = 0.45
+Rotation_Speed = 0.046
+
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+position = Vector2( 216.244, -38.7103 )
+z_index = 3
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1.33487, 21.3574 )
+shape = SubResource( 1 )
+
+[node name="guntimer" type="Timer" parent="."]
+wait_time = 40.0
+autostart = true
+
+[node name="controler" parent="." instance=ExtResource( 4 )]
+
+[node name="network_tick_rate" type="Timer" parent="."]
+wait_time = 0.03
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+"anims/New Anim" = SubResource( 2 )
+anims/damage = SubResource( 3 )
+"anims/health gain" = SubResource( 4 )
+"anims/leg move" = SubResource( 5 )
+anims/movement = SubResource( 6 )
+
+[node name="AdMob" type="Node" parent="."]
+script = ExtResource( 5 )
+is_real = true
+banner_on_top = false
+interstitial_id = "ca-app-pub-3940256099942544/8691691433"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+
+[node name="muzzle flash" type="AnimatedSprite" parent="."]
+frames = SubResource( 7 )
+
+[node name="Camera2D" parent="." instance=ExtResource( 7 )]
+
+[node name="sargrnt" type="Sprite" parent="."]
+scale = Vector2( 0.34, 0.34 )
+z_index = 5
+z_as_relative = false
+texture = ExtResource( 9 )
+
+[node name="Sprite2" type="Sprite" parent="sargrnt"]
+visible = false
+position = Vector2( 53.2971, 229.412 )
+texture = ExtResource( 10 )
+offset = Vector2( -90, -5 )
+
+[node name="Sprite3" type="Sprite" parent="sargrnt"]
+visible = false
+position = Vector2( -25.8153, 222.472 )
+texture = ExtResource( 10 )
+offset = Vector2( 90, 5 )
+
+[node name="gunShow" type="AnimationPlayer" parent="."]
+anims/gun = SubResource( 8 )
+
+[node name="turret" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 2.87445, 46.7673 )
+rotation = -0.0217173
+scale = Vector2( 0.45, 0.34 )
+z_index = 3
+texture = ExtResource( 8 )
+centered = false
+offset = Vector2( -11.3549, -101.476 )
+
+[node name="muzzle" type="Position2D" parent="turret"]
+position = Vector2( 234.987, -65.0171 )
+rotation = 0.018243
+scale = Vector2( 2.21403, 1.78561 )
+
+[node name="1" type="Sprite" parent="turret"]
+visible = false
+modulate = Color( 0, 0, 0, 1 )
+show_behind_parent = true
+position = Vector2( 2.31815, 7.39149 )
+rotation = -0.100741
+scale = Vector2( 1.82925, 0.791501 )
+texture = ExtResource( 1 )
+offset = Vector2( 37.4632, -4.65198 )
+
+[node name="crosshair" type="Sprite" parent="turret"]
+modulate = Color( 1, 1, 1, 0.501961 )
+position = Vector2( 1099.88, -36.1063 )
+rotation = 0.0287401
+scale = Vector2( 2.46804, 4.04171 )
+texture = ExtResource( 15 )
+
+[node name="Animationmover" type="AnimationPlayer" parent="."]
+anims/movement = SubResource( 9 )
+
+[node name="melee" type="Sprite" parent="."]
+position = Vector2( 3.60364, 45.571 )
+rotation = 0.00646761
+scale = Vector2( 0.34, 0.34 )
+texture = ExtResource( 14 )
+offset = Vector2( 193.212, -57.2724 )
+
+[node name="melee damage" type="Area2D" parent="melee"]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="melee/melee damage"]
+visible = false
+position = Vector2( 198.676, -47.5382 )
+build_mode = 1
+polygon = PoolVector2Array( -25.293, -38.1216, -9.41164, -81.7953, 100.434, -77.825, 104.405, -19.5933, 93.8172, 29.3742, 67.3483, 45.2556, -0.147491, 32.0211, -58.3791, 79.6652, -206.616, 63.4196, -210.587, 32.9803, -46.4682, 1.58183 )
+
+[node name="meleetimer" type="Timer" parent="melee"]
+
+[node name="HUD" parent="." instance=ExtResource( 3 )]
+
+[connection signal="dead" from="." to="controler" method="emit"]
+[connection signal="health_changed" from="." to="HUD" method="update_healthbar"]
+[connection signal="timeout" from="guntimer" to="." method="_on_guntimer_timeout"]
+[connection signal="timeout" from="network_tick_rate" to="." method="_on_network_tick_rate_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="body_entered" from="melee/melee damage" to="." method="_on_melee_damage_body_entered"]

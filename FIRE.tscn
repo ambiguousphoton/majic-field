@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://BULLET.tscn" type="PackedScene" id=1]
+[ext_resource path="res://art/MAJIK/MAJIK0000.png" type="Texture" id=2]
+[ext_resource path="res://art/MAJIK/MAJIK0001.png" type="Texture" id=3]
+[ext_resource path="res://art/MAJIK/MAJIK0002.png" type="Texture" id=4]
+[ext_resource path="res://art/MAJIK/MAJIK0003.png" type="Texture" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="BULLET" instance=ExtResource( 1 )]
+damage = 200
+lifetime = 2.0
+
+[node name="bullet1" parent="." index="3"]
+visible = false
+
+[node name="FIRE" type="AnimatedSprite" parent="." index="4"]
+position = Vector2( -24.1667, -3.33333 )
+rotation = -1.5708
+scale = Vector2( 0.5, 0.7 )
+frames = SubResource( 1 )
+frame = 3
+playing = true

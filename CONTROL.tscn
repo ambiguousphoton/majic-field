@@ -1,0 +1,168 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://gme buttons/UI UP BUTTON.png" type="Texture" id=1]
+[ext_resource path="res://gme buttons/PRESSESD UP BUTTON.png" type="Texture" id=2]
+[ext_resource path="res://gme buttons/ROTATION BUTTON ANTI CLOCKWISE.png" type="Texture" id=3]
+[ext_resource path="res://gme buttons/BLASTING.png" type="Texture" id=4]
+[ext_resource path="res://gme buttons/GUN STINGER.png" type="Texture" id=5]
+[ext_resource path="res://gme buttons/PRESSED ROTATION BUTTON.png" type="Texture" id=6]
+[ext_resource path="res://gme buttons/ROTATION BUTTON.png" type="Texture" id=7]
+[ext_resource path="res://gme buttons/PRESSED ROTATION BUTTON ANTICLOCKWISE.png" type="Texture" id=8]
+[ext_resource path="res://RESOURCES/MENU.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Control.gd" type="Script" id=10]
+[ext_resource path="res://gme buttons/DIAGONAL MOTION BUTTON.png" type="Texture" id=11]
+[ext_resource path="res://gme buttons/PRESSED DIAGONAL MOTION BUTTON.png" type="Texture" id=12]
+[ext_resource path="res://admob-lib/admob.gd" type="Script" id=13]
+[ext_resource path="res://gme buttons/ADD HEALTH BUTTON.png" type="Texture" id=14]
+[ext_resource path="res://gme buttons/PRESSED ADD HEALTH BUTTON.png" type="Texture" id=15]
+[ext_resource path="res://gme buttons/MELEE 0002.png" type="Texture" id=16]
+[ext_resource path="res://gme buttons/MELEE 0001.png" type="Texture" id=17]
+[ext_resource path="res://ui/relese button.gd" type="Script" id=18]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource( 18 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SHOOTER" type="TouchScreenButton" parent="Control"]
+modulate = Color( 1, 1, 1, 0.847059 )
+position = Vector2( 1635.14, 551.149 )
+scale = Vector2( 1.6, 1.6 )
+normal = ExtResource( 5 )
+pressed = ExtResource( 4 )
+action = "ui_blast"
+
+[node name="MELEE" type="TouchScreenButton" parent="Control"]
+modulate = Color( 1, 1, 1, 0.847059 )
+position = Vector2( 862.014, 760.912 )
+scale = Vector2( 0.6, 0.6 )
+normal = ExtResource( 17 )
+pressed = ExtResource( 16 )
+action = "ui_atk"
+
+[node name="MENU" parent="Control" instance=ExtResource( 9 )]
+modulate = Color( 1, 1, 1, 0.847059 )
+
+[node name="ANTI ROTATION" type="TouchScreenButton" parent="Control"]
+modulate = Color( 1, 1, 1, 0.847059 )
+position = Vector2( 1357.03, 743.374 )
+scale = Vector2( 1.8, 1.8 )
+normal = ExtResource( 3 )
+pressed = ExtResource( 8 )
+action = "ui_w"
+
+[node name="ROTATION" type="TouchScreenButton" parent="Control"]
+modulate = Color( 1, 1, 1, 0.847059 )
+position = Vector2( 1093.34, 739.56 )
+scale = Vector2( 1.8, 1.8 )
+normal = ExtResource( 7 )
+pressed = ExtResource( 6 )
+action = "ui_s"
+
+[node name="Node2D" type="Node2D" parent="Control"]
+position = Vector2( -41.5305, -241.632 )
+scale = Vector2( 1.25, 1.25 )
+
+[node name="UP" type="TouchScreenButton" parent="Control/Node2D"]
+modulate = Color( 1, 1, 1, 0.847059 )
+position = Vector2( 260.564, 501.922 )
+scale = Vector2( 1.5, 1.5 )
+normal = ExtResource( 1 )
+pressed = ExtResource( 2 )
+action = "ui_up"
+
+[node name="LEFT" type="TouchScreenButton" parent="Control/Node2D"]
+modulate = Color( 1, 1, 1, 0.847059 )
+position = Vector2( 72.198, 848.556 )
+rotation = -1.5708
+scale = Vector2( 1.5, 1.5 )
+normal = ExtResource( 1 )
+pressed = ExtResource( 2 )
+action = "ui_left"
+
+[node name="RIGHT" type="TouchScreenButton" parent="Control/Node2D"]
+modulate = Color( 1, 1, 1, 0.847059 )
+position = Vector2( 583.992, 713.783 )
+rotation = 1.5708
+scale = Vector2( 1.5, 1.5 )
+normal = ExtResource( 1 )
+pressed = ExtResource( 2 )
+action = "ui_right"
+
+[node name="DOWN" type="TouchScreenButton" parent="Control/Node2D"]
+modulate = Color( 1, 1, 1, 0.847059 )
+position = Vector2( 393.746, 1053.06 )
+rotation = 3.14159
+scale = Vector2( 1.5, 1.5 )
+normal = ExtResource( 1 )
+pressed = ExtResource( 2 )
+action = "ui_down"
+
+[node name="D1" type="TouchScreenButton" parent="Control"]
+modulate = Color( 1, 1, 1, 0.847059 )
+position = Vector2( 460.61, 245.407 )
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 11 )
+pressed = ExtResource( 12 )
+action = "ui_up "
+
+[node name="D2" type="TouchScreenButton" parent="Control"]
+modulate = Color( 1, 1, 1, 0.847059 )
+position = Vector2( -124.591, 649.385 )
+rotation = -1.5708
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 11 )
+pressed = ExtResource( 12 )
+
+[node name="D3" type="TouchScreenButton" parent="Control"]
+modulate = Color( 1, 1, 1, 0.847059 )
+position = Vector2( 864.588, 823.057 )
+rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 11 )
+pressed = ExtResource( 12 )
+
+[node name="D4" type="TouchScreenButton" parent="Control"]
+modulate = Color( 1, 1, 1, 0.847059 )
+position = Vector2( 279.386, 1223.26 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 11 )
+pressed = ExtResource( 12 )
+
+[node name="AdMob" type="Node" parent="Control"]
+script = ExtResource( 13 )
+interstitial_id = "ca-app-pub-3940256099942544/5354046379"
+
+[node name="addhealth" type="TouchScreenButton" parent="Control"]
+position = Vector2( 1709.42, 199.865 )
+scale = Vector2( 0.6, 0.6 )
+normal = ExtResource( 14 )
+pressed = ExtResource( 15 )
+
+[connection signal="dead" from="." to="Control" method="_on_D2_released"]
+[connection signal="dead" from="." to="Control" method="_on_D1_released"]
+[connection signal="dead" from="." to="Control" method="_on_D4_released"]
+[connection signal="dead" from="." to="Control" method="_on_D3_released"]
+[connection signal="pressed" from="Control/MENU" to="Control" method="_on_MENU_pressed"]
+[connection signal="pressed" from="Control/D1" to="Control" method="_on_D1_pressed"]
+[connection signal="released" from="Control/D1" to="Control" method="_on_D1_released"]
+[connection signal="pressed" from="Control/D2" to="Control" method="_on_D2_pressed"]
+[connection signal="released" from="Control/D2" to="Control" method="_on_D2_released"]
+[connection signal="pressed" from="Control/D3" to="Control" method="_on_D3_pressed"]
+[connection signal="released" from="Control/D3" to="Control" method="_on_D3_released"]
+[connection signal="pressed" from="Control/D4" to="Control" method="_on_D4_pressed"]
+[connection signal="released" from="Control/D4" to="Control" method="_on_D4_released"]
+[connection signal="interstitial_closed" from="Control/AdMob" to="Control" method="_on_AdMob_interstitial_closed"]
+[connection signal="interstitial_failed_to_load" from="Control/AdMob" to="Control" method="_on_AdMob_interstitial_failed_to_load"]
+[connection signal="interstitial_loaded" from="Control/AdMob" to="Control" method="_on_AdMob_interstitial_loaded"]
+[connection signal="rewarded" from="Control/AdMob" to="Control" method="_on_AdMob_rewarded"]
+[connection signal="rewarded_video_failed_to_load" from="Control/AdMob" to="Control" method="_on_AdMob_rewarded_video_failed_to_load"]
+[connection signal="rewarded_video_loaded" from="Control/AdMob" to="Control" method="_on_AdMob_rewarded_video_loaded"]
+[connection signal="released" from="Control/addhealth" to="Control" method="_on_addhealth_released"]
