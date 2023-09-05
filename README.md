@@ -2,7 +2,7 @@
 
 Welcome to **Majic Field** – a delightful 2D role-playing game built in the Godot Engine! 🎮
 
-![Majic Field](insert_image_link_here)
+![Majic Field](gameicon.jpg)
 
 ## Overview 🌟🏰👾🧙‍♀️
 
