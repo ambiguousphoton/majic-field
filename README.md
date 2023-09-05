@@ -2,22 +2,25 @@
 
 Welcome to **Majic Field** – a delightful 2D role-playing game built in the Godot Engine! 🎮
 
+![Majic Field](insert_image_link_here)
 
-## Overview
+## Overview 🌟🏰👾🧙‍♀️
 
 Majic Field is an enchanting adventure that will take you through 40+ exciting levels spread across 4 unique maps. Dive into the magical world of Majic Field, face challenging enemies, and explore the mysteries it holds. Additionally, test your skills and endurance in the thrilling Survival Mode.
 
 The game features more than 5 adorable characters, each with their special abilities and charm. The charming and cute graphics will keep you immersed in the fantastical world of Majic Field.
 
+📱 For mobile devices, touch controls are always available, ensuring a seamless gaming experience.
+
 ## Controls
 
 Playing Majic Field is simple and fun! Use these controls to navigate your character and conquer the game:
 
-- **Arrow Keys**: Move your character around the game world.
-- **S Key**: Rotate the player's gun clockwise.
-- **W Key**: Rotate the player's gun counterclockwise.
-- **Space Bar**: Use your melee weapon to fend off nearby enemies.
-- **Enter**: Fire your ranged weapon to attack from a distance.
+- ⬅️ **Arrow Keys**: Move your character around the game world.
+- ➡️ **S Key**: Rotate the player's gun clockwise.
+- ⬅️ **W Key**: Rotate the player's gun counterclockwise.
+- 👊 **Space Bar**: Use your melee weapon to fend off nearby enemies.
+- 🔥 **Enter**: Fire your ranged weapon to attack from a distance.
 
 ## Getting Started
 
@@ -33,6 +36,8 @@ To get started with Majic Field, follow these steps:
 3. **Open the Project**: Launch Godot Engine and open the Majic Field project by selecting the project folder you cloned in step 1.
 
 4. **Run the Game**: Click the "Play" button in Godot to start the game and embark on your magical journey!
+
+🔗 **Try the game now**: You can also play Majic Field through this link: [Majic Field on itch.io](https://astrixgame.itch.io/magic-field).
 
 ## Contributing
 
